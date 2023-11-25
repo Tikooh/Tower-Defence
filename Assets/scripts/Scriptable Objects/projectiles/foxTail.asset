@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
+  m_Name: foxTail
+  m_EditorClassIdentifier: 
+  projectileSprite: {fileID: 21300000, guid: 46e5d5bd707a7304083764a501be15e9, type: 3}
+  power: 0
+  isMelee: 1
+  projectileAnimation: {fileID: 9100000, guid: 0a2f5150a12bc5c40b1e38628e787bb8, type: 2}
+  projectilePrefab: {fileID: 1774305537255416183, guid: bcdc6c34498f6234d8e3c3dffd009183, type: 3}
+  projectileIcon: {fileID: 2800000, guid: 46e5d5bd707a7304083764a501be15e9, type: 3}
+  speed: 0
+  damage: 10
+  cooldown: 3
+  radius: 0

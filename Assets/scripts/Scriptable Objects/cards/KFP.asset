@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adceb2b1e2e09e241b85ec195f65aa87, type: 3}
+  m_Name: KFP
+  m_EditorClassIdentifier: 
+  towerIcon: {fileID: 2800000, guid: 1d95349b1d43b9c4ebcaccfa5ee5ebb6, type: 3}
+  towerSO: {fileID: 11400000, guid: 2578c1e5f9adfe34e93da7eb93c4755b, type: 2}
+  projectileSO: {fileID: 11400000, guid: a03e5c6667fc35648b5e3e4c6114b0dd, type: 2}
+  towerPrefab: {fileID: 3530875646272252171, guid: b4a82c5408acaff42b456dcc644b9074, type: 3}
+  cost: 50

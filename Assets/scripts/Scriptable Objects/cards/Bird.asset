@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adceb2b1e2e09e241b85ec195f65aa87, type: 3}
+  m_Name: Bird
+  m_EditorClassIdentifier: 
+  towerIcon: {fileID: 2800000, guid: 912fc66c0a9c5d44090fd7ae897cc2d3, type: 3}
+  towerSO: {fileID: 11400000, guid: fc628426d8e51b141ad14dac9e60c20b, type: 2}
+  projectileSO: {fileID: 11400000, guid: fe05640b5f9f68c48b44916d51f36628, type: 2}
+  towerPrefab: {fileID: 8649010721697193005, guid: 3cc65cca4396f7841a2c46f7d484ff62, type: 3}
+  cost: 25
