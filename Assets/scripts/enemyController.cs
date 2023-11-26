@@ -22,6 +22,7 @@ public class enemyController : MonoBehaviour
         health = enemySO.health;
         damage = enemySO.damage;
         onDeathPrefab = enemySO.onDeathPrefab;
+        enemySO.healthChangeEvent.AddListener(startFlash);
     }
 
     private IEnumerator Flash()
@@ -32,10 +33,17 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+
+    void startFlash()
     {
-        if (collision.gameObject.tag == "Throwable")
+        StartCoroutine(Flash());
+    }
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Throwable"))
         {
+            enemySO.DecreaseHealth(10);
+
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.x > 0)
             {
                 Destroy(gameObject);
@@ -52,13 +60,11 @@ public class enemyController : MonoBehaviour
                 force = new Vector2(force.x, -force.y);
             }
             collision.gameObject.GetComponent<DragNShoot2>().rb.velocity -= force;
-            
-            // Debug.Log("Collision");
         }
-        if (collision.gameObject.tag == "projectile" && isHit == false)
+
+        if (collision.CompareTag("projectile") && isHit == false)
         {
-            StartCoroutine(Flash());
-            health -= collision.gameObject.GetComponent<projectileManager>().damage;
+            enemySO.DecreaseHealth(collision.gameObject.GetComponent<projectileManager>().damage);
 
             isHit = true;
             if (health <= 0)
@@ -66,7 +72,6 @@ public class enemyController : MonoBehaviour
                 Destroy(gameObject);
                 Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
             }
-
         }
         
     }
