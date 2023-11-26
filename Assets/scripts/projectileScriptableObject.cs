@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class projectileScriptableObject : ScriptableObject
 {
-    public int power;
+    public int pierce;
     public bool isMelee;
     public int speed;
     public int damage;

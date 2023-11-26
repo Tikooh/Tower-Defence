@@ -11,6 +11,8 @@ public class DragNShoot2 : MonoBehaviour
     public Vector2 minPower;
     public Vector2 maxPower;
     public Animator animator;
+    [System.NonSerialized]
+    public int collisions;
     Vector2 stationary;
 
     Camera cam; //change mouse position from screen position to world position
@@ -66,7 +68,7 @@ public class DragNShoot2 : MonoBehaviour
         }
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "backboard")
         {
@@ -75,7 +77,7 @@ public class DragNShoot2 : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (rb.velocity.x <= -0.01 && collision.gameObject.tag == "Enemy")
+        if (collisions <= 0 && collision.gameObject.tag == "Enemy" && gameObject.tag == "Throwable")
         {
             Debug.Log("Collision with enemy");
             gameObject.tag = "towerPlaceable";

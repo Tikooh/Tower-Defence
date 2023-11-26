@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
   m_Name: bomb
   m_EditorClassIdentifier: 
-  power: 0
+  pierce: -1
   isMelee: 0
   speed: 4
   damage: 40

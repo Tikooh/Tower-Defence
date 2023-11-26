@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d652fc728a322e46992aec5b285614a, type: 3}
   m_Name: Deflector
   m_EditorClassIdentifier: 
-  health: 20
+  health: 30
   damage: 10
   cooldown: 1
   canDeflect: 0

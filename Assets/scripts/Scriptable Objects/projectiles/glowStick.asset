@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
   m_Name: glowStick
   m_EditorClassIdentifier: 
-  projectileSprite: {fileID: 21300000, guid: 41ce6a5aaf3c0734d970cebfb00e0921, type: 3}
-  power: 0
+  pierce: 3
   isMelee: 0
-  projectileAnimation: {fileID: 9100000, guid: a8eb1cb0b9e68aa4884ad09b5900aac3, type: 2}
-  projectilePrefab: {fileID: 1774305537255416183, guid: bcdc6c34498f6234d8e3c3dffd009183, type: 3}
-  projectileIcon: {fileID: 2800000, guid: 41ce6a5aaf3c0734d970cebfb00e0921, type: 3}
   speed: 5
-  damage: 2
+  damage: 10
   cooldown: 1
   radius: 0
+  onDeathPrefab: {fileID: 0}

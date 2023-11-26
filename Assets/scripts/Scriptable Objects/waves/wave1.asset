@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96be581e4c45a6441ba35241de49fd8c, type: 3}
   m_Name: wave1
   m_EditorClassIdentifier: 
-  credit: 300
+  credit: 3000
   minionSpawnCoefficient: 30
   shieldSpawnCoefficient: 50
   deflectorSpawnCoefficient: 20

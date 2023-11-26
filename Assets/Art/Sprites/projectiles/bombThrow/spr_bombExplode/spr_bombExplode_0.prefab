@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 449727431835962957}
   - component: {fileID: 6401266426508868070}
   - component: {fileID: 7413360350247507673}
-  - component: {fileID: 8047382984723852899}
   m_Layer: 0
   m_Name: spr_bombExplode_0
   m_TagString: projectile
@@ -143,18 +142,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &8047382984723852899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9200499726438010160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4de1247ca91b5d4885ec9261a0026e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 22
-  radius: 0
-  onDeathPrefab: {fileID: 0}
