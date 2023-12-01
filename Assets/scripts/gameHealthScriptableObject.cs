@@ -10,7 +10,7 @@ public class gameHealthScriptableObject : ScriptableObject
     public int health;
 
     [SerializeField]
-    private int maxHealth;
+    public int maxHealth;
 
     public UnityEvent healthChangeEvent;
     private void OnEnable()

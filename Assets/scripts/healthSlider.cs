@@ -9,23 +9,30 @@ public class healthSlider : MonoBehaviour
     public gameHealthScriptableObject gameHealthSO;
     public Image healthBar;
     [SerializeField]
-    private Slider slider;
+    public Image healthTxt;
+    private float amtSlider;
     // Start is called before the first frame update
     void Start()
     {
-        // gameHealthSO.healthChangeEvent.AddListener(changeHealthBar);
+        gameHealthSO.healthChangeEvent.AddListener(changeHealthBar);
     }
 
-    void changeHealthBar(int amount)
+    void changeHealthBar()
     {
-        slider.value -= amount;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "enemyFinishBoard")
+        if (healthBar != null)
         {
-            gameHealthSO.decreaseHealth(10);
+            amtSlider = ((float)gameHealthSO.health / (float)gameHealthSO.maxHealth);
+            Debug.Log(amtSlider);
+            healthBar.GetComponent<Image>().fillAmount = amtSlider;
+            // healthTxt.GetComponent<text = string.Format("{0}/{1}", gameHealthSO.health, gameHealthSO.maxHealth);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            gameHealthSO.decreaseHealth(1);
         }
     }
 }

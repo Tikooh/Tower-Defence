@@ -77,7 +77,6 @@ public class enemySpawnCoefficient : MonoBehaviour
 
 
         }
-        Debug.Log(result);
         // return credit;
         // switch(result)
         // {
