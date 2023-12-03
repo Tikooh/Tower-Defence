@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-public class gameHealthScriptableObject : ScriptableObject
+public class gameScriptableObject: ScriptableObject
 {
     [System.NonSerialized]
     public int health;
@@ -12,16 +12,34 @@ public class gameHealthScriptableObject : ScriptableObject
     [SerializeField]
     public int maxHealth;
 
+    [System.NonSerialized]
+    public int coins;
+
     public UnityEvent healthChangeEvent;
+    public UnityEvent coinPickupEvent;
     private void OnEnable()
     {
+
+        // HEALTH
         health = maxHealth;
         if (healthChangeEvent == null)
         {
             healthChangeEvent = new UnityEvent();
         }
+
+        coins = 0;
+        if (coinPickupEvent == null)
+        {
+            coinPickupEvent = new UnityEvent();
+        }
     }
 
+    public void coinPickup()
+    {
+        coins += 10;
+        coinPickupEvent.Invoke();
+    }
+    //HEALTH
     public void decreaseHealth(int amount)
     {
         health -= amount;

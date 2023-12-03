@@ -10,5 +10,6 @@ public class enemyScriptableObject : ScriptableObject
     public float cooldown;
     public bool canDeflect; 
     public GameObject onDeathPrefab;
+    public GameObject coinPrefab;
 }
 

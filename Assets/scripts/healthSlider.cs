@@ -8,7 +8,7 @@ using TMPro;
 
 public class healthSlider : MonoBehaviour
 {
-    public gameHealthScriptableObject gameHealthSO;
+    public gameScriptableObject gameHealthSO;
     public Image healthBar;
     private float amtSlider;
     // Start is called before the first frame update

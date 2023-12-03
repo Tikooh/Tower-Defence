@@ -13,6 +13,7 @@ public class enemyController : MonoBehaviour
     public int hitDelay = 1;
     private bool isHit = false;
     private float timer;
+    public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class enemyController : MonoBehaviour
         health = enemySO.health;
         damage = enemySO.damage;
         onDeathPrefab = enemySO.onDeathPrefab;
+        coinPrefab = enemySO.coinPrefab;
     }
 
     private IEnumerator Flash()
@@ -65,6 +67,7 @@ public class enemyController : MonoBehaviour
             {
                 Destroy(gameObject);
                 Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
             }
 
         }
