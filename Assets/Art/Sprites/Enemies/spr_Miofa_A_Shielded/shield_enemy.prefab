@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRb: {fileID: 1620202946475857683}
-  speed: 2
+  speed: 4
 --- !u!114 &4459991812576543385
 MonoBehaviour:
   m_ObjectHideFlags: 0

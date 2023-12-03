@@ -13,6 +13,8 @@ TagManager:
   - Enemy
   - Throwable
   - projectile
+  - enemyFinishBoard
+  - hpBar
   layers:
   - Default
   - TransparentFX

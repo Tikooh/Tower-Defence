@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfb4304076241eb479fb6fcdafef25fb, type: 3}
-  m_Name: towerLevel1
+  m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
+  m_Name: explosion
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  healthChangeEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  pierce: 10
+  isMelee: 0
+  speed: 0
+  damage: 30
+  cooldown: 0
+  radius: 0
+  onDeathPrefab: {fileID: 0}
+  onDeathSO: {fileID: 0}

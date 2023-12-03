@@ -10,8 +10,22 @@ public class gameHealthScriptableObject : ScriptableObject
     public int health;
 
     [SerializeField]
-    private int maxHealth;
+    public int maxHealth;
 
     public UnityEvent healthChangeEvent;
+    private void OnEnable()
+    {
+        health = maxHealth;
+        if (healthChangeEvent == null)
+        {
+            healthChangeEvent = new UnityEvent();
+        }
+    }
+
+    public void decreaseHealth(int amount)
+    {
+        health -= amount;
+        healthChangeEvent.Invoke();
+    }
 
 }
