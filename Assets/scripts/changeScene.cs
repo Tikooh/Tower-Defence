@@ -7,6 +7,7 @@ public class changeScene : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Scene First build");
+        string requestedScene = "Stage1";
+        SceneManager.LoadSceneAsync(requestedScene);
     }
 }
