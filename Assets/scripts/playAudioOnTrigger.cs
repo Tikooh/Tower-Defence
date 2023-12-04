@@ -6,7 +6,7 @@ public class playAudioOnTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private AudioSource audioSource;
-    void Update()
+    void Start()
     {
         if (!audioSource.isPlaying)
         {

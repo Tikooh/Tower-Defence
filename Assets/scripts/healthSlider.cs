@@ -34,6 +34,10 @@ public class healthSlider : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             gameHealthSO.decreaseHealth(1);
+            if (gameHealthSO.health == 0)
+            {
+                gameHealthSO.healthZero();
+            }
         }
     }
 }

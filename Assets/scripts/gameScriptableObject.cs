@@ -17,6 +17,7 @@ public class gameScriptableObject: ScriptableObject
 
     public UnityEvent healthChangeEvent;
     public UnityEvent coinPickupEvent;
+    [System.NonSerialized] public UnityEvent gameOverEvent;
     private void OnEnable()
     {
 
@@ -32,6 +33,11 @@ public class gameScriptableObject: ScriptableObject
         {
             coinPickupEvent = new UnityEvent();
         }
+
+        if (gameOverEvent == null)
+        {
+            gameOverEvent = new UnityEvent();
+        }
     }
 
     public void coinPickup()
@@ -44,6 +50,11 @@ public class gameScriptableObject: ScriptableObject
     {
         health -= amount;
         healthChangeEvent.Invoke();
+    }
+
+    public void healthZero()
+    {
+        gameOverEvent.Invoke();
     }
 
 }
