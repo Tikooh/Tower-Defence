@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class enemyController : MonoBehaviour
 {
     public enemyScriptableObject enemySO;
     private GameObject onDeathPrefab;
+    private AudioClip onThrowCollision;
     public int health;
     public int damage;
     public Rigidbody2D rb;
@@ -15,6 +17,9 @@ public class enemyController : MonoBehaviour
     private float timer;
     public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
+    [SerializeField] private AudioSource audioSource;
+
+    public UnityEvent killed;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +29,15 @@ public class enemyController : MonoBehaviour
         damage = enemySO.damage;
         onDeathPrefab = enemySO.onDeathPrefab;
         coinPrefab = enemySO.coinPrefab;
+        onThrowCollision = enemySO.onThrowCollision;
+        killed.AddListener(onDeath);
     }
 
+    void onDeath()
+    {
+        Destroy(gameObject);
+        Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
+    }
     private IEnumerator Flash()
     {
         // Debug.Log("waiting");
@@ -40,9 +52,7 @@ public class enemyController : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.x > 0)
             {
-                Destroy(gameObject);
-                Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
-                Debug.Log("killed");
+                killed.Invoke();
             }
 
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.y > 0)
@@ -65,8 +75,7 @@ public class enemyController : MonoBehaviour
             isHit = true;
             if (health <= 0)
             {
-                Destroy(gameObject);
-                Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
+                killed.Invoke();
                 Instantiate(coinPrefab, transform.position, Quaternion.identity);
             }
 

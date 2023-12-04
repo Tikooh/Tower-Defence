@@ -11,5 +11,6 @@ public class enemyScriptableObject : ScriptableObject
     public bool canDeflect; 
     public GameObject onDeathPrefab;
     public GameObject coinPrefab;
+    public AudioClip onThrowCollision;
 }
 
