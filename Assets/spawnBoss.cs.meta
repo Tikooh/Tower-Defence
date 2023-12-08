@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc4324ad8de3f894b83e4fb057b6f0e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - waveSO: {instanceID: 0}
+  - enemySO: {instanceID: 0}
+  - bossPrefab: {instanceID: 0}
+  - timer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

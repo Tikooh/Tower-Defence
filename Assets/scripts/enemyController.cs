@@ -26,6 +26,7 @@ public class enemyController : MonoBehaviour
         timer = hitDelay;
         health = enemySO.health;
         damage = enemySO.damage;
+        gameObject.GetComponent<enemyMove>().speed = enemySO.speed;
         onDeathPrefab = enemySO.onDeathPrefab;
         coinPrefab = enemySO.coinPrefab;
         onThrowCollision = enemySO.onThrowCollision;
@@ -47,7 +48,7 @@ public class enemyController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Throwable")
+        if (collision.gameObject.tag == "Throwable" && gameObject.tag != "boss")
         {
             collision.gameObject.GetComponent<DragNShoot2>().collisions -= 1;
 
