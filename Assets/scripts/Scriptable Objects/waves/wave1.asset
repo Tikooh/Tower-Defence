@@ -17,4 +17,4 @@ MonoBehaviour:
   shieldSpawnCoefficient: 20
   deflectorSpawnCoefficient: 30
   throwerSpawnCoefficient: 20
-  bossWaveTime: 5
+  bossWaveTime: 40
