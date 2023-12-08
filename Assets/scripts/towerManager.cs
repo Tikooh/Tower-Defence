@@ -16,6 +16,7 @@ public class towerManager : MonoBehaviour
         gameObject.GetComponent<projectile>().projectilePrefab = towerSO.projectilePrefab;
         gameObject.GetComponent<DragNShoot2>().minPower = towerSO.minPower;
         gameObject.GetComponent<DragNShoot2>().maxPower = towerSO.maxPower;
+        gameObject.GetComponent<DragNShoot2>().collisions = towerSO.collisions;
         cost = towerSO.cost;
         health = towerSO.health;
         cooldown = towerSO.cooldown;

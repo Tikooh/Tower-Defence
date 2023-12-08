@@ -15,6 +15,7 @@ MonoBehaviour:
   projectileSO: {fileID: 11400000, guid: fe05640b5f9f68c48b44916d51f36628, type: 2}
   projectilePrefab: {fileID: 8992835323934512517, guid: 68b49e83fa460eb459261a199b7f2df6, type: 3}
   cost: 25
+  collisions: 5
   cooldown: 1
   health: 0
   minPower: {x: -2, y: -2}

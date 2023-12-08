@@ -12,8 +12,7 @@ public class enemyController : MonoBehaviour
     public int health;
     public int damage;
     public Rigidbody2D rb;
-    public int hitDelay = 1;
-    private bool isHit = false;
+    public float hitDelay = 1.5f;
     private float timer;
     public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
@@ -46,10 +45,12 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Throwable")
         {
+            collision.gameObject.GetComponent<DragNShoot2>().collisions -= 1;
+
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.x > 0)
             {
                 killed.Invoke();
@@ -67,12 +68,12 @@ public class enemyController : MonoBehaviour
             
             // Debug.Log("Collision");
         }
-        if (collision.gameObject.tag == "projectile" && isHit == false)
+        if (collision.gameObject.tag == "projectile" && collision.gameObject.GetComponent<projectileManager>().onDeathPrefab != null)
         {
             StartCoroutine(Flash());
             health -= collision.gameObject.GetComponent<projectileManager>().damage;
+            collision.gameObject.GetComponent<projectileManager>().pierce -= 1;
 
-            isHit = true;
             if (health <= 0)
             {
                 killed.Invoke();
@@ -84,13 +85,5 @@ public class enemyController : MonoBehaviour
     }
     void Update()
     {
-        if (isHit == true)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                isHit = false;
-            }
-        }
     }
 }
