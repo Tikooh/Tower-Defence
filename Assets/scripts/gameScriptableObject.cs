@@ -18,6 +18,8 @@ public class gameScriptableObject: ScriptableObject
     public UnityEvent healthChangeEvent;
     public UnityEvent coinPickupEvent;
     [System.NonSerialized] public UnityEvent gameOverEvent;
+    [System.NonSerialized] public UnityEvent pauseEvent;
+    [System.NonSerialized] public UnityEvent unpauseEvent;
     private void OnEnable()
     {
 
@@ -38,6 +40,16 @@ public class gameScriptableObject: ScriptableObject
         {
             gameOverEvent = new UnityEvent();
         }
+
+        if (pauseEvent == null)
+        {
+            pauseEvent = new UnityEvent();
+        }
+
+        if (unpauseEvent == null)
+        {
+            unpauseEvent = new UnityEvent();
+        }
     }
 
     public void coinPickup()
@@ -57,4 +69,13 @@ public class gameScriptableObject: ScriptableObject
         gameOverEvent.Invoke();
     }
 
+    public void Pause()
+    {
+        pauseEvent.Invoke();
+    }
+    
+    public void Unpause()
+    {
+        unpauseEvent.Invoke();
+    }
 }
