@@ -23,6 +23,7 @@ public class onGameOver : MonoBehaviour
         StopAllAudio();
         gameOverAudioSource.PlayOneShot(gameOverSound);
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
     void StopAllAudio() {
         allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
   m_Name: explosion
   m_EditorClassIdentifier: 
-  pierce: 10
+  pierce: 100
   isMelee: 0
   speed: 0
   damage: 30

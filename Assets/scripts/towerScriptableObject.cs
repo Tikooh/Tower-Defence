@@ -9,6 +9,7 @@ public class towerScriptableObject : ScriptableObject
     public GameObject projectilePrefab;
 
     public int cost;
+    public int collisions;
     public float cooldown;
     public int health;
     public Vector2 minPower;
