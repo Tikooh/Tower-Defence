@@ -124,14 +124,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySO: {fileID: 0}
+  gameSO: {fileID: 11400000, guid: a2545a9634d13af4d85ab9550c2b11f8, type: 2}
   health: 400
   damage: 0
   rb: {fileID: -8098856805273859481}
   hitDelay: 1
-  onDeathAudio: {fileID: 0}
   coinPrefab: {fileID: 0}
   force: {x: 0, y: 0}
-  audioSource: {fileID: 5695055440075158185}
   killed:
     m_PersistentCalls:
       m_Calls: []

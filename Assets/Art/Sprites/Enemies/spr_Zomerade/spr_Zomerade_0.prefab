@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRb: {fileID: 7559834566910818830}
-  speed: 1
 --- !u!114 &-9147723332066991861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,14 +222,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySO: {fileID: 0}
-  onThrowCollision: {fileID: 0}
+  gameSO: {fileID: 11400000, guid: a2545a9634d13af4d85ab9550c2b11f8, type: 2}
   health: 0
   damage: 10
   rb: {fileID: 0}
   hitDelay: 1
   coinPrefab: {fileID: 0}
   force: {x: 2, y: 2}
-  audioSource: {fileID: 4484604088078771989}
+  killed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &7559834566910818830
 Rigidbody2D:
   serializedVersion: 4

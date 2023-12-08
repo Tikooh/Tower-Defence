@@ -7,17 +7,15 @@ using UnityEngine.Events;
 public class enemyController : MonoBehaviour
 {
     public enemyScriptableObject enemySO;
+    public gameScriptableObject gameSO;
     private GameObject onDeathPrefab;
-    private AudioClip onThrowCollision;
     public int health;
     public int damage;
     public Rigidbody2D rb;
     public float hitDelay = 1.5f;
     private float timer;
-    public AudioClip onDeathAudio;
     public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
-    public AudioSource audioSource;
 
     public UnityEvent killed;
 
@@ -27,17 +25,14 @@ public class enemyController : MonoBehaviour
         timer = hitDelay;
         health = enemySO.health;
         damage = enemySO.damage;
-        onDeathAudio = enemySO.onDeathAudio;
         gameObject.GetComponent<enemyMove>().speed = enemySO.speed;
         onDeathPrefab = enemySO.onDeathPrefab;
         coinPrefab = enemySO.coinPrefab;
-        onThrowCollision = enemySO.onThrowCollision;
         killed.AddListener(onDeath);
     }
 
     void onDeath()
     {
-        
         Destroy(gameObject);
         Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
     }
@@ -47,7 +42,6 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        audioSource.PlayOneShot(onDeathAudio);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,6 +52,13 @@ public class enemyController : MonoBehaviour
 
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.x > 0)
             {
+                if (gameObject.tag == "boss")
+                {
+                    gameSO.bossDie();
+                }
+                else{
+                    gameSO.enemyDie();
+                }
                 killed.Invoke();
             }
 
@@ -82,6 +83,13 @@ public class enemyController : MonoBehaviour
 
             if (health <= 0)
             {
+                if (gameObject.tag == "boss")
+                {
+                    gameSO.bossDie();
+                }
+                else{
+                    gameSO.enemyDie();
+                }
                 killed.Invoke();
                 Instantiate(coinPrefab, transform.position, Quaternion.identity);
             }

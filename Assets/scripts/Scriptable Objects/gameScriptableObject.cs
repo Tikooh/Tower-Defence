@@ -22,6 +22,9 @@ public class gameScriptableObject: ScriptableObject
     [System.NonSerialized] public UnityEvent gameOverEvent;
     [System.NonSerialized] public UnityEvent pauseEvent;
     [System.NonSerialized] public UnityEvent unpauseEvent;
+    [System.NonSerialized] public UnityEvent enemyDefeatedEvent;
+    [System.NonSerialized] public UnityEvent bossDefeatedEvent;
+    
 
     void OnEnable()
     {
@@ -53,6 +56,16 @@ public class gameScriptableObject: ScriptableObject
         {
             unpauseEvent = new UnityEvent();
         }
+
+        if (enemyDefeatedEvent == null)
+        {
+            enemyDefeatedEvent = new UnityEvent();
+        }
+
+        if (bossDefeatedEvent == null)
+        {
+            bossDefeatedEvent = new UnityEvent();
+        }
     }
 
     public void coinPickup()
@@ -80,5 +93,14 @@ public class gameScriptableObject: ScriptableObject
     public void Unpause()
     {
         unpauseEvent.Invoke();
+    }
+
+    public void enemyDie()
+    {
+        enemyDefeatedEvent.Invoke();
+    }
+    public void bossDie()
+    {
+        bossDefeatedEvent.Invoke();
     }
 }
