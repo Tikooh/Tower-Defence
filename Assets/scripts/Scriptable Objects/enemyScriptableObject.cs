@@ -13,5 +13,6 @@ public class enemyScriptableObject : ScriptableObject
     public GameObject onDeathPrefab;
     public GameObject coinPrefab;
     public AudioClip onThrowCollision;
+    public AudioClip onDeathAudio;
 }
 

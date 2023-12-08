@@ -14,9 +14,10 @@ public class enemyController : MonoBehaviour
     public Rigidbody2D rb;
     public float hitDelay = 1.5f;
     private float timer;
+    public AudioClip onDeathAudio;
     public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
-    [SerializeField] private AudioSource audioSource;
+    public AudioSource audioSource;
 
     public UnityEvent killed;
 
@@ -26,6 +27,7 @@ public class enemyController : MonoBehaviour
         timer = hitDelay;
         health = enemySO.health;
         damage = enemySO.damage;
+        onDeathAudio = enemySO.onDeathAudio;
         gameObject.GetComponent<enemyMove>().speed = enemySO.speed;
         onDeathPrefab = enemySO.onDeathPrefab;
         coinPrefab = enemySO.coinPrefab;
@@ -35,6 +37,7 @@ public class enemyController : MonoBehaviour
 
     void onDeath()
     {
+        
         Destroy(gameObject);
         Instantiate(onDeathPrefab, transform.position, Quaternion.identity);
     }
@@ -44,6 +47,7 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        audioSource.PlayOneShot(onDeathAudio);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
