@@ -15,3 +15,4 @@ MonoBehaviour:
   minionCredit: 10
   shieldCredit: 50
   deflectorCredit: 30
+  throwerCredit: 40

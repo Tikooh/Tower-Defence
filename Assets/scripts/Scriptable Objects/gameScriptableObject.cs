@@ -14,23 +14,26 @@ public class gameScriptableObject: ScriptableObject
 
     [System.NonSerialized]
     public int coins;
+    [SerializeField]
+    public int startingCoins;
 
     public UnityEvent healthChangeEvent;
     public UnityEvent coinPickupEvent;
     [System.NonSerialized] public UnityEvent gameOverEvent;
     [System.NonSerialized] public UnityEvent pauseEvent;
     [System.NonSerialized] public UnityEvent unpauseEvent;
-    private void OnEnable()
+
+    void OnEnable()
     {
 
         // HEALTH
         health = maxHealth;
+        coins = startingCoins;
         if (healthChangeEvent == null)
         {
             healthChangeEvent = new UnityEvent();
         }
 
-        coins = 0;
         if (coinPickupEvent == null)
         {
             coinPickupEvent = new UnityEvent();

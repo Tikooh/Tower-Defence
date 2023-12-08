@@ -23,6 +23,8 @@ public class onGameOver : MonoBehaviour
         StopAllAudio();
         gameOverAudioSource.PlayOneShot(gameOverSound);
         gameOverScreen.SetActive(true);
+        gameSO.health = gameSO.maxHealth;
+        gameSO.coins = gameSO.startingCoins;
         Time.timeScale = 0;
     }
     void StopAllAudio() {

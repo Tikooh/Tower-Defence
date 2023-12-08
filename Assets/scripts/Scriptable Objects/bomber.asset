@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSO: {fileID: 11400000, guid: a03e5c6667fc35648b5e3e4c6114b0dd, type: 2}
   projectilePrefab: {fileID: 783913258518112733, guid: b01e51f78e19e88499a46bd52af89b25, type: 3}
-  cost: 50
+  cost: 100
   collisions: 5
   cooldown: 1
   health: 0

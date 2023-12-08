@@ -21,10 +21,4 @@ public class towerManager : MonoBehaviour
         health = towerSO.health;
         cooldown = towerSO.cooldown;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

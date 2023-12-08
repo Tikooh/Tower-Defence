@@ -50,7 +50,8 @@ public class enemySpawnCoefficient : MonoBehaviour
     {
         minion,
         shield,
-        deflector
+        deflector,
+        thrower
     }
     void spawn()
     {
@@ -75,6 +76,12 @@ public class enemySpawnCoefficient : MonoBehaviour
                 credit -= creditSO.deflectorCredit;
                 break;
 
+            case enemyType.thrower:
+                enemy = Instantiate(enemyPrefab[(int) enemyType.thrower], transform.position, Quaternion.Euler(0,180f,0));
+                enemy.GetComponent<enemyController>().enemySO = enemySO[(int) enemyType.thrower];
+                credit -= creditSO.throwerCredit;
+                break;
+
 
         }
         // return credit;
@@ -92,6 +99,7 @@ public class enemySpawnCoefficient : MonoBehaviour
         randomSelector.AddPercentageItem(enemyType.minion, waveSO.minionSpawnCoefficient);
         randomSelector.AddPercentageItem(enemyType.shield, waveSO.shieldSpawnCoefficient);
         randomSelector.AddPercentageItem(enemyType.deflector, waveSO.deflectorSpawnCoefficient);
+        randomSelector.AddPercentageItem(enemyType.thrower, waveSO.throwerSpawnCoefficient);
         credit = waveSO.credit;
     }
 
