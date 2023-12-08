@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7392ffba1a2934d47a12ec4199169d88, type: 3}
   m_Name: bomb
   m_EditorClassIdentifier: 
-  pierce: -1
+  pierce: 1
   isMelee: 0
   speed: 4
-  damage: 40
+  damage: 0
   cooldown: 3
   radius: 2
   onDeathPrefab: {fileID: 9200499726438010160, guid: d6ff3fb6b069bd043accdfa9c0b03799, type: 3}
+  onDeathSO: {fileID: 11400000, guid: be24aff6890389ef0a816461f0d46fc9, type: 2}

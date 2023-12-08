@@ -68,11 +68,12 @@ public class enemyController : MonoBehaviour
             
             // Debug.Log("Collision");
         }
-        if (collision.gameObject.tag == "projectile" && collision.gameObject.GetComponent<projectileManager>().onDeathPrefab != null)
+        if (collision.gameObject.CompareTag("projectile") || collision.gameObject.CompareTag("explosive"))
         {
             StartCoroutine(Flash());
             health -= collision.gameObject.GetComponent<projectileManager>().damage;
             collision.gameObject.GetComponent<projectileManager>().pierce -= 1;
+            print(collision.gameObject.GetComponent<projectileManager>().damage);
 
             if (health <= 0)
             {
