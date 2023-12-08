@@ -8,34 +8,39 @@ public class onPause : MonoBehaviour
 {
     public gameScriptableObject gameSO;
     public GameObject pauseScreen;
-
-    private AudioSource[] allAudioSources;
-    private bool gamePaused = false;
+    private bool gamePaused;
  
     void Start()
     {
-        gameSO.gameOverEvent.AddListener(displayPause);
+        gamePaused = false;
+        gameSO.pauseEvent.AddListener(displayPause);
+        gameSO.unpauseEvent.AddListener(undisplayPause);
     }
 
     void displayPause()
     {
+        Debug.Log("displayMenu");
         pauseScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void undisplayPause()
     {
         pauseScreen.SetActive(false);
+        Time.timeScale = 1;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && gamePaused == false)
         {
+            Debug.Log("escape presseed");
             gameSO.Pause();
             gamePaused = true;
         }
         
-        if (Input.GetKeyDown(KeyCode.Escape) && gamePaused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && gamePaused == true)
         {
+            Debug.Log("escape Unpressed");
             gameSO.Unpause();
             gamePaused = false;
         }

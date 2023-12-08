@@ -13,5 +13,7 @@ public class playAudioOnTrigger : MonoBehaviour
         audioSource.Play();
         Debug.Log("playing");
         }
+
+        
     }
 }
