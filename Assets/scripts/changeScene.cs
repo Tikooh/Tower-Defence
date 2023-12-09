@@ -12,4 +12,9 @@ public class changeScene : MonoBehaviour
         SceneManager.LoadSceneAsync(requestedScene);
 
     }
+
+    public void endGame()
+    {
+        Application.Quit();
+    }
 }

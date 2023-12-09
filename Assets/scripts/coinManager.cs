@@ -14,14 +14,17 @@ public class coinManager : MonoBehaviour
     {
         while (gameSO.health > 0)
         {
-            gameSO.coinPickup();
             yield return new WaitForSeconds(5);
+            gameSO.coinPickup();
+            
         }
 
     }
     void Start()
     {
         print(gameSO.coins);
+        gameSO.health = gameSO.maxHealth;
+        gameSO.coins = gameSO.startingCoins;
         coinTXT.GetComponentInChildren<TMP_Text>().text = string.Format("{0}", gameSO.coins);
         gameSO.coinPickupEvent.AddListener(updateCoinTXT);
         StartCoroutine(moneyOverTime());
