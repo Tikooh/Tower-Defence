@@ -44,8 +44,26 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
+
+    private IEnumerator damageTower(Collider2D collision)
+    {
+        while (health >= 0 && collision != null)
+        {
+            collision.gameObject.GetComponent<towerManager>().health -= damage;
+            yield return new WaitForSeconds(1f);
+        }
+        gameObject.GetComponent<enemyMove>().attacking = false;
+        rb.WakeUp();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("tower"))
+        {
+            rb.Sleep();
+            gameObject.GetComponent<enemyMove>().attacking = true;
+            StartCoroutine(damageTower(collision));
+        }
         if (collision.gameObject.tag == "Throwable" && gameObject.tag != "boss")
         {
             collision.gameObject.GetComponent<DragNShoot2>().collisions -= 1;

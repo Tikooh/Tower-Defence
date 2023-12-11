@@ -17,6 +17,6 @@ MonoBehaviour:
   cost: 10
   collisions: 1
   cooldown: 1
-  health: 0
+  health: 50
   minPower: {x: -2, y: -2}
   maxPower: {x: 2, y: 2}
