@@ -101,6 +101,7 @@ public class enemySpawnCoefficient : MonoBehaviour
         randomSelector.AddPercentageItem(enemyType.deflector, waveSO.deflectorSpawnCoefficient);
         randomSelector.AddPercentageItem(enemyType.thrower, waveSO.throwerSpawnCoefficient);
         credit = waveSO.credit;
+        Debug.Log(gameObject.transform.position);
     }
 
     // Update is called once per frame
