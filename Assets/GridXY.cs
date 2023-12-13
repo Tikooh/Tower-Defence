@@ -36,8 +36,8 @@ public class GridXY
 
 public class GridTile
 {
-    public Vector2 position;
-    public bool towerPlaced {get; private set; }
+    public Vector3 position;
+    public bool towerPlaced {get; set; }
     public GameObject tower {get; set;}
     
 }

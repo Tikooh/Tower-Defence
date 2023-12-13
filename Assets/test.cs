@@ -6,10 +6,13 @@ using UnityEngine.Tilemaps;
 public class test : MonoBehaviour
 {
     public GameObject sukonbu;
+    public int xOffset;
+    public int yOffset;
+    public GridXY grid;
     // Start is called before the first frame update
     void Start()
     {
-        GridXY grid = new GridXY(10,10,20f, () => new GridTile());
+        grid = new GridXY(14,6,20f, () => new GridTile());
 
 
         // Debug.Log(grid.gridArray[0,0]);
@@ -17,13 +20,13 @@ public class test : MonoBehaviour
         {
             for (int y=0; y<grid.gridArray.GetLength(1);y++)
             {
-                Vector2 position = new Vector2(x,y);
+                Vector3 position = new Vector2(x+xOffset,y+yOffset);
                 GridTile tile = grid.gridArray[x,y];
                 tile.position = position;
                 tile.tower = sukonbu;
 
                 Instantiate(tile.tower, tile.position, Quaternion.identity);
-                Debug.Log(grid.gridArray[x,y].position);
+                Debug.Log(tile.position);
             }
         }
     }
