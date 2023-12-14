@@ -16,6 +16,8 @@ MonoBehaviour:
   damage: 10
   cooldown: 1
   canDeflect: 0
+  speed: 2.5
   onDeathPrefab: {fileID: 1320584366524817704, guid: d7e3318cdfa08034187a32510746e016, type: 3}
   coinPrefab: {fileID: 3676199722092469679, guid: 9661a9ccfbeedfcf095f2659343eb6a6, type: 3}
   onThrowCollision: {fileID: 8300000, guid: 81b3181bc4b8c8647b2d3e5698b13db8, type: 3}
+  onDeathAudio: {fileID: 8300000, guid: b4860e2264456f144bd4f9478184e73f, type: 3}

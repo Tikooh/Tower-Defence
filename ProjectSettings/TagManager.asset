@@ -17,6 +17,10 @@ TagManager:
   - hpBar
   - coin
   - explosive
+  - boss
+  - gridTile
+  - gridManager
+  - grid
   layers:
   - Default
   - TransparentFX

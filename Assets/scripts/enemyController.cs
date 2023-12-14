@@ -7,8 +7,8 @@ using UnityEngine.Events;
 public class enemyController : MonoBehaviour
 {
     public enemyScriptableObject enemySO;
+    public gameScriptableObject gameSO;
     private GameObject onDeathPrefab;
-    private AudioClip onThrowCollision;
     public int health;
     public int damage;
     public Rigidbody2D rb;
@@ -16,7 +16,6 @@ public class enemyController : MonoBehaviour
     private float timer;
     public GameObject coinPrefab;
     [SerializeField] public Vector2 force;
-    [SerializeField] private AudioSource audioSource;
 
     public UnityEvent killed;
 
@@ -26,9 +25,9 @@ public class enemyController : MonoBehaviour
         timer = hitDelay;
         health = enemySO.health;
         damage = enemySO.damage;
+        gameObject.GetComponent<enemyMove>().speed = enemySO.speed;
         onDeathPrefab = enemySO.onDeathPrefab;
         coinPrefab = enemySO.coinPrefab;
-        onThrowCollision = enemySO.onThrowCollision;
         killed.AddListener(onDeath);
     }
 
@@ -45,14 +44,39 @@ public class enemyController : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
+
+    private IEnumerator damageTower(Collider2D collision)
+    {
+        while (health >= 0 && collision != null)
+        {
+            collision.gameObject.GetComponent<towerManager>().health -= damage;
+            yield return new WaitForSeconds(1f);
+        }
+        gameObject.GetComponent<enemyMove>().attacking = false;
+        rb.WakeUp();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Throwable")
+        if (collision.CompareTag("tower"))
+        {
+            rb.Sleep();
+            gameObject.GetComponent<enemyMove>().attacking = true;
+            StartCoroutine(damageTower(collision));
+        }
+        if (collision.gameObject.tag == "Throwable" && gameObject.tag != "boss")
         {
             collision.gameObject.GetComponent<DragNShoot2>().collisions -= 1;
 
             if (collision.gameObject.GetComponent<DragNShoot2>().rb.velocity.x > 0)
             {
+                if (gameObject.tag == "boss")
+                {
+                    gameSO.bossDie();
+                }
+                else{
+                    gameSO.enemyDie();
+                }
                 killed.Invoke();
             }
 
@@ -77,6 +101,13 @@ public class enemyController : MonoBehaviour
 
             if (health <= 0)
             {
+                if (gameObject.tag == "boss")
+                {
+                    gameSO.bossDie();
+                }
+                else{
+                    gameSO.enemyDie();
+                }
                 killed.Invoke();
                 Instantiate(coinPrefab, transform.position, Quaternion.identity);
             }

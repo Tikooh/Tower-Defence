@@ -19,6 +19,8 @@ public class towerCardManager : MonoBehaviour
     public float cooldown;
     public int cost;
     public Texture towerIcon;
+    public gameScriptableObject gameSO;
+    public GameObject coinTXT;
 
     private void Start()
     {
@@ -39,6 +41,8 @@ public class towerCardManager : MonoBehaviour
         dragNdrop.towerSO = CardSO[index].towerSO;
         dragNdrop.projectileSO = CardSO[index].projectileSO;
         dragNdrop.towerPrefab = CardSO[index].towerPrefab;
+        dragNdrop.gameSO = gameSO;
+        dragNdrop.coinTXT = coinTXT;
 
         // Debug.Log(dragNdrop.towerSprite);
         towerCards[index] = card;

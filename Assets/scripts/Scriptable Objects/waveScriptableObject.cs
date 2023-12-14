@@ -9,4 +9,6 @@ public class waveScriptableObject : ScriptableObject
     public int minionSpawnCoefficient;
     public int shieldSpawnCoefficient;
     public int deflectorSpawnCoefficient;
+    public int throwerSpawnCoefficient;
+    public float bossWaveTime;
 }

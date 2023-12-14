@@ -38,6 +38,20 @@ public class DragNShoot2 : MonoBehaviour
 
     }
 
+    private IEnumerator Flash()
+    {
+        // Debug.Log("waiting");
+        while (gameObject.tag == "towerPlaceable")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            yield return new WaitForSeconds(0.5f);
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.5f);
+        }
+
+
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -81,6 +95,7 @@ public class DragNShoot2 : MonoBehaviour
         {
             Debug.Log("Collision with enemy");
             gameObject.tag = "towerPlaceable";
+            StartCoroutine(Flash());
             rb.velocity = stationary;
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
             

@@ -10,5 +10,11 @@ public class changeScene : MonoBehaviour
         string requestedScene = "Stage1";
         Time.timeScale = 1;
         SceneManager.LoadSceneAsync(requestedScene);
+
+    }
+
+    public void endGame()
+    {
+        Application.Quit();
     }
 }

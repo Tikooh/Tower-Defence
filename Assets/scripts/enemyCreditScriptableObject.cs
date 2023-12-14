@@ -8,4 +8,5 @@ public class enemyCreditScriptableObject : ScriptableObject
     public int minionCredit;
     public int shieldCredit;
     public int deflectorCredit;
+    public int throwerCredit;
 }

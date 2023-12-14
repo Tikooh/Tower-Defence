@@ -127,7 +127,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3530875646272252171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 14e82074971c7244f9d9832d3867cc76, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -150,9 +150,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.8}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0.3125}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2, y: 2}
     newSize: {x: 2, y: 2}
@@ -161,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2061311263934856748
 MonoBehaviour:
@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerSO: {fileID: 11400000, guid: 2578c1e5f9adfe34e93da7eb93c4755b, type: 2}
   projectileSO: {fileID: 11400000, guid: a03e5c6667fc35648b5e3e4c6114b0dd, type: 2}
+  health: 0
 --- !u!95 &974630922575558115
 Animator:
   serializedVersion: 5

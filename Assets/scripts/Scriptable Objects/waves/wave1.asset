@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: wave1
   m_EditorClassIdentifier: 
   credit: 3000
-  minionSpawnCoefficient: 60
-  shieldSpawnCoefficient: 10
+  minionSpawnCoefficient: 30
+  shieldSpawnCoefficient: 20
   deflectorSpawnCoefficient: 30
+  throwerSpawnCoefficient: 20
+  bossWaveTime: 40

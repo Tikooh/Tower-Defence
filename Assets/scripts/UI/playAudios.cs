@@ -9,11 +9,15 @@ public class playAudios : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip coin;
     public AudioClip baseHit;
+    public AudioClip bossDefeat;
+    public AudioClip enemyDefeat;
     // Start is called before the first frame update
     void Start()
     {
         gameSO.coinPickupEvent.AddListener(coinPickupSFX);
         gameSO.healthChangeEvent.AddListener(baseHitSFX);
+        gameSO.enemyDefeatedEvent.AddListener(enemySFX);
+        gameSO.bossDefeatedEvent.AddListener(bossSFX);
     }
 
     void coinPickupSFX()
@@ -25,5 +29,15 @@ public class playAudios : MonoBehaviour
     void baseHitSFX()
     {
         audioSource.PlayOneShot(baseHit);
+    }
+
+    void enemySFX()
+    {
+        audioSource.PlayOneShot(enemyDefeat);
+    }
+
+    void bossSFX()
+    {
+        audioSource.PlayOneShot(bossDefeat);
     }
 }

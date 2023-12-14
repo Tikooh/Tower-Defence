@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using JetBrains.Annotations;
-using UnityEditor.UIElements;
 
 public class timer : MonoBehaviour
 {

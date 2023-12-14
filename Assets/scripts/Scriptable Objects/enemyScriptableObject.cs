@@ -9,8 +9,8 @@ public class enemyScriptableObject : ScriptableObject
     public int damage;
     public float cooldown;
     public bool canDeflect; 
+    public float speed;
     public GameObject onDeathPrefab;
     public GameObject coinPrefab;
-    public AudioClip onThrowCollision;
 }
 

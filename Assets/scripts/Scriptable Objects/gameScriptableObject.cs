@@ -14,23 +14,29 @@ public class gameScriptableObject: ScriptableObject
 
     [System.NonSerialized]
     public int coins;
+    [SerializeField]
+    public int startingCoins;
 
     public UnityEvent healthChangeEvent;
     public UnityEvent coinPickupEvent;
     [System.NonSerialized] public UnityEvent gameOverEvent;
     [System.NonSerialized] public UnityEvent pauseEvent;
     [System.NonSerialized] public UnityEvent unpauseEvent;
-    private void OnEnable()
+    [System.NonSerialized] public UnityEvent enemyDefeatedEvent;
+    [System.NonSerialized] public UnityEvent bossDefeatedEvent;
+    
+
+    void OnEnable()
     {
 
         // HEALTH
         health = maxHealth;
+        coins = startingCoins;
         if (healthChangeEvent == null)
         {
             healthChangeEvent = new UnityEvent();
         }
 
-        coins = 0;
         if (coinPickupEvent == null)
         {
             coinPickupEvent = new UnityEvent();
@@ -49,6 +55,16 @@ public class gameScriptableObject: ScriptableObject
         if (unpauseEvent == null)
         {
             unpauseEvent = new UnityEvent();
+        }
+
+        if (enemyDefeatedEvent == null)
+        {
+            enemyDefeatedEvent = new UnityEvent();
+        }
+
+        if (bossDefeatedEvent == null)
+        {
+            bossDefeatedEvent = new UnityEvent();
         }
     }
 
@@ -77,5 +93,14 @@ public class gameScriptableObject: ScriptableObject
     public void Unpause()
     {
         unpauseEvent.Invoke();
+    }
+
+    public void enemyDie()
+    {
+        enemyDefeatedEvent.Invoke();
+    }
+    public void bossDie()
+    {
+        bossDefeatedEvent.Invoke();
     }
 }
