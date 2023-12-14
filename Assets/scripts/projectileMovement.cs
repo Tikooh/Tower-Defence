@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
+using Microsoft.Win32.SafeHandles;
 using UnityEngine;
 
 public class projectileMovement : MonoBehaviour
@@ -9,10 +10,14 @@ public class projectileMovement : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 force;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        force = new Vector2(speed, 0f);
-        rb.AddForce(force, ForceMode2D.Impulse);
+        if (force == Vector2.zero)
+        {
+            force = new Vector2(speed, 0f);
+            rb.AddForce(force, ForceMode2D.Impulse);
+        }
+
     }
 
 }

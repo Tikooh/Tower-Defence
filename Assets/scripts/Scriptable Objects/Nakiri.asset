@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 443d5690b40e7df44874204da4f4aa86, type: 3}
-  m_Name: meleeTail
+  m_Name: Nakiri
   m_EditorClassIdentifier: 
-  projectileSO: {fileID: 11400000, guid: 88e85e79386551a4aba33bad2ea00ea6, type: 2}
-  projectilePrefab: {fileID: 1082443503782649633, guid: 9689e73b0d8119341814d98e4562729c, type: 3}
-  cost: 10
-  collisions: 1
-  cooldown: 1
-  health: 150
+  projectileSO: {fileID: 11400000, guid: 9dbd99159fbbba24db741dae565e023a, type: 2}
+  projectilePrefab: {fileID: 5852549894042093434, guid: 9c16577ff8dc3e244ad482cb939fbc01, type: 3}
+  cost: 50
+  collisions: 3
+  cooldown: 3
+  health: 200
   minPower: {x: -2, y: -2}
   maxPower: {x: 2, y: 2}
