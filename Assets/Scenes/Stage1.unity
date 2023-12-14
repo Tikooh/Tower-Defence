@@ -320,8 +320,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.28705, y: -0.41525006, z: 0}
-    m_Extent: {x: 2.4051502, y: 2.60485, z: 0}
+    m_Center: {x: -2.29645, y: -0.42565, z: 0}
+    m_Extent: {x: 2.41105, y: 2.6082501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -5869,8 +5869,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.5223501, y: -0.3327, z: 0}
-    m_Extent: {x: 2.73895, y: 2.9097, z: 0}
+    m_Center: {x: -1.5234499, y: -0.33140004, z: 0}
+    m_Extent: {x: 2.74125, y: 2.9085002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -7182,8 +7182,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.04205, y: -0.37255, z: 0}
-    m_Extent: {x: 2.20965, y: 2.87615, z: 0}
+    m_Center: {x: -2.04915, y: -0.38015008, z: 0}
+    m_Extent: {x: 2.21385, y: 2.87165, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -7335,8 +7335,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.2965, y: -0.41715002, z: 0}
-    m_Extent: {x: 2.701, y: 2.90585, z: 0}
+    m_Center: {x: -2.2994, y: -0.41335, z: 0}
+    m_Extent: {x: 2.7028, y: 2.91405, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -7437,8 +7437,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.70575, y: -0.3694501, z: 0}
-    m_Extent: {x: 2.65345, y: 2.83375, z: 0}
+    m_Center: {x: -1.7027501, y: -0.37, z: 0}
+    m_Extent: {x: 2.65345, y: 2.8288002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -8732,8 +8732,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.7065499, y: -0.37479997, z: 0}
-    m_Extent: {x: 2.65635, y: 2.8309, z: 0}
+    m_Center: {x: -1.7042, y: -0.37629998, z: 0}
+    m_Extent: {x: 2.6571, y: 2.8356, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -8920,8 +8920,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.04665, y: -0.38195002, z: 0}
-    m_Extent: {x: 2.21445, y: 2.8706498, z: 0}
+    m_Center: {x: -2.0572498, y: -0.37450004, z: 0}
+    m_Extent: {x: 2.20945, y: 2.8674, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -10564,8 +10564,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.8043499, y: -0.39265, z: 0}
-    m_Extent: {x: 2.46735, y: 2.8610501, z: 0}
+    m_Center: {x: -1.8062, y: -0.38629997, z: 0}
+    m_Extent: {x: 2.4649, y: 2.869, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 3
@@ -12162,9 +12162,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 203545734}
     - target: {fileID: 4794207055384608355, guid: cdca57c3066d0d4008ec19d574b3e505, type: 3}
+      propertyPath: amtOfCards
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794207055384608355, guid: cdca57c3066d0d4008ec19d574b3e505, type: 3}
+      propertyPath: CardSO.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794207055384608355, guid: cdca57c3066d0d4008ec19d574b3e505, type: 3}
       propertyPath: cardHolderTransform
       value: 
       objectReference: {fileID: 147047462}
+    - target: {fileID: 4794207055384608355, guid: cdca57c3066d0d4008ec19d574b3e505, type: 3}
+      propertyPath: CardSO.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 72294183ac3538b45961a80e8ee19e14, type: 2}
     - target: {fileID: 5930189788860683148, guid: cdca57c3066d0d4008ec19d574b3e505, type: 3}
       propertyPath: coinTXT
       value: 

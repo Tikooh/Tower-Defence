@@ -17,6 +17,6 @@ MonoBehaviour:
   speed: 0
   damage: 10
   cooldown: 0
-  radius: 0
+  radius: 2
   onDeathPrefab: {fileID: 0}
   onDeathSO: {fileID: 0}
