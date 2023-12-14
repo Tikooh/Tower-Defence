@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProportionalRandomSelector<T>
 {
     
-    private readonly Dictionary<T, int> percentageItemsDict;  //T is a generic type parameter which guarantees type safety  
+    public readonly Dictionary<T, int> percentageItemsDict;  //T is a generic type parameter which guarantees type safety  
     public ProportionalRandomSelector() => percentageItemsDict = new();
     //function to add an item to dictionary
     public void AddPercentageItem(T item, int percentage) => percentageItemsDict.Add(item, percentage); 
@@ -36,7 +37,7 @@ public class ProportionalRandomSelector<T>
 public class enemySpawnCoefficient : MonoBehaviour
 {
     ProportionalRandomSelector<enemyType> randomSelector = new();
-    public waveScriptableObject waveSO;
+    public waveScriptableObject[] waveSO;
 
     public enemyScriptableObject[] enemySO;
     public enemyCreditScriptableObject creditSO;
@@ -96,22 +97,24 @@ public class enemySpawnCoefficient : MonoBehaviour
     }
     void Start()
     {
-        randomSelector.AddPercentageItem(enemyType.minion, waveSO.minionSpawnCoefficient);
-        randomSelector.AddPercentageItem(enemyType.shield, waveSO.shieldSpawnCoefficient);
-        randomSelector.AddPercentageItem(enemyType.deflector, waveSO.deflectorSpawnCoefficient);
-        randomSelector.AddPercentageItem(enemyType.thrower, waveSO.throwerSpawnCoefficient);
-        credit = waveSO.credit;
-        Debug.Log(gameObject.transform.position);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        spawnInterval -= Time.deltaTime;
-        if (credit > 0 && spawnInterval <= 0)
+        foreach (waveScriptableObject i in waveSO)
         {
-            spawnInterval = Random.Range(1f,2f);
-            spawn();
+            randomSelector.AddPercentageItem(enemyType.minion, i.minionSpawnCoefficient);
+            randomSelector.AddPercentageItem(enemyType.shield, i.shieldSpawnCoefficient);
+            randomSelector.AddPercentageItem(enemyType.deflector, i.deflectorSpawnCoefficient);
+            randomSelector.AddPercentageItem(enemyType.thrower, i.throwerSpawnCoefficient);
+            credit = i.credit;
+            while (credit >= 0)
+            {
+                spawnInterval -= Time.deltaTime;
+                if (spawnInterval <= 0)
+                {
+                    spawnInterval = Random.Range(1f,2f);
+                    spawn();
+                }
+            }
+            randomSelector.percentageItemsDict.Clear();
+            Debug.Log("switching wave");
         }
     }
 }

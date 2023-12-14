@@ -21,6 +21,7 @@ TagManager:
   - gridTile
   - gridManager
   - grid
+  - backCollision
   layers:
   - Default
   - TransparentFX

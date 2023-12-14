@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb4304076241eb479fb6fcdafef25fb, type: 3}
   m_Name: towerLevel1
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 2000
   startingCoins: 100
   healthChangeEvent:
     m_PersistentCalls:
