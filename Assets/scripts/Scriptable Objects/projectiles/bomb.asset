@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pierce: 1
   isMelee: 0
-  speed: 4
+  speed: 10
   damage: 0
   cooldown: 3
-  radius: 2
+  radius: 0
   onDeathPrefab: {fileID: 9200499726438010160, guid: d6ff3fb6b069bd043accdfa9c0b03799, type: 3}
   onDeathSO: {fileID: 11400000, guid: be24aff6890389ef0a816461f0d46fc9, type: 2}
