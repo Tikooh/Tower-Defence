@@ -9,10 +9,18 @@ public class test : MonoBehaviour
     public int xOffset;
     public int yOffset;
     public GridXY grid;
+    private Vector3 position;
     // Start is called before the first frame update
     void Start()
     {
         grid = new GridXY(14,6,20f, () => new GridTile());
+
+        position = new Vector3(0-1.6f,0-0.2f,0);
+        GameObject gridPrefab = Instantiate(sukonbu, position, Quaternion.identity);
+        gridPrefab.SetActive(false);
+        gridPrefab.tag = "grid";
+        staticTest.go = gridPrefab;
+
 
 
         // Debug.Log(grid.gridArray[0,0]);
@@ -20,12 +28,10 @@ public class test : MonoBehaviour
         {
             for (int y=0; y<grid.gridArray.GetLength(1);y++)
             {
-                Vector3 position = new Vector2(x+xOffset,y+yOffset);
+                position = new Vector3(x+xOffset,y+yOffset,0);
                 GridTile tile = grid.gridArray[x,y];
                 tile.position = position;
                 tile.tower = sukonbu;
-
-                Instantiate(tile.tower, tile.position, Quaternion.identity);
                 Debug.Log(tile.position);
             }
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credit: 3000
   minionSpawnCoefficient: 30
-  shieldSpawnCoefficient: 160
+  shieldSpawnCoefficient: 20
   deflectorSpawnCoefficient: 30
   throwerSpawnCoefficient: 20
   bossWaveTime: 40

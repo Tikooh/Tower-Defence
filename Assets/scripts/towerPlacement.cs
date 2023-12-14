@@ -20,10 +20,11 @@ public class towerPlacement : MonoBehaviour, IDragHandler, IPointerDownHandler, 
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        
         Debug.Log("Here");
         if (gameObject.tag == "towerPlaceable")
         {
+            staticTest.go.SetActive(true);
+
             Debug.Log("onpointerdwon");
 
             relativeCameraPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -82,7 +83,7 @@ public class towerPlacement : MonoBehaviour, IDragHandler, IPointerDownHandler, 
                             // Debug.Log(String.Format("position:{0}, CompPos:{1}", i.position, CompPos));
 
                             i.towerPlaced = true;
-                            pos = new Vector3((float) i.position.x, (float) i.position.y + 0.2f, 0);
+                            pos = new Vector3((float) i.position.x + -0.1f, (float) i.position.y + 0.4f, 0);
                             gameObject.transform.position = pos;
                         }
                     }
@@ -109,6 +110,7 @@ public class towerPlacement : MonoBehaviour, IDragHandler, IPointerDownHandler, 
         if (gameObject.tag == "towerPlaceable")
         {
             gameObject.tag = "tower";
+            GameObject.FindGameObjectWithTag("grid").SetActive(false);
         }
     }
 }
