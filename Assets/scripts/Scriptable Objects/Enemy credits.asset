@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35964f07b5d7be54f935cbfd6b5e0bdc, type: 3}
   m_Name: Enemy credits
   m_EditorClassIdentifier: 
-  minionCredit: 10
+  minionCredit: 30
   shieldCredit: 50
   deflectorCredit: 30
   throwerCredit: 40
